@@ -1,0 +1,5 @@
+services:
+  -
+    class: Mhujer\PHPStanConsistence\Rules\ClassUsesObjectPrototypeRule
+    tags:
+      - phpstan.rules.rule
