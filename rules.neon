@@ -3,3 +3,7 @@ services:
     class: Mhujer\PHPStanConsistence\Rules\ClassUsesObjectPrototypeRule
     tags:
       - phpstan.rules.rule
+  -
+    class: Mhujer\PHPStanConsistence\Rules\ConsistenceFunctionWrappersAreUsedRule
+    tags:
+      - phpstan.rules.rule
