@@ -1,0 +1,13 @@
+{
+	"name": "mhujer/phpstan-consistence",
+	"description": "Custom PHPStan Rules for Consistence library",
+	"type": "library",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Martin Hujer",
+			"email": "mhujer@gmail.com"
+		}
+	],
+	"require": {}
+}
