@@ -36,6 +36,10 @@ class ClassUsesObjectPrototypeRule implements \PHPStan\Rules\Rule
 	public function processNode(Node $node, Scope $scope): array
 	{
 		$className = $node->name;
+		if ($className === null) {
+			return [];
+		}
+
 		$fullyQualifiedClassName = $scope->getNamespace() . '\\' . $className;
 
 		// anonymous classes are not analyzed
@@ -50,7 +54,7 @@ class ClassUsesObjectPrototypeRule implements \PHPStan\Rules\Rule
 			return [
 				sprintf(
 					'Class "%s" should extend \Consistence\ObjectPrototype',
-					$className
+					$className->toString()
 				),
 			];
 		}
@@ -59,7 +63,7 @@ class ClassUsesObjectPrototypeRule implements \PHPStan\Rules\Rule
 			return [
 				sprintf(
 					'Class %s should use \Consistence\Type\ObjectMixinTrait',
-					$className
+					$className->toString()
 				),
 			];
 		}
