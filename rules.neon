@@ -1,6 +1,6 @@
 services:
   -
-    class: Mhujer\PHPStanConsistence\Rules\ClassUsesObjectPrototypeRule
+    class: Mhujer\PHPStanConsistence\Rules\ClassShouldNotUseObjectPrototypeRule
     tags:
       - phpstan.rules.rule
   -

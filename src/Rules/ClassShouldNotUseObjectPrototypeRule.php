@@ -2,13 +2,15 @@
 
 namespace Mhujer\PHPStanConsistence\Rules;
 
+use Consistence\Enum\Enum;
+use Consistence\ObjectPrototype;
 use Consistence\Type\ObjectMixinTrait;
 use PhpParser\Node;
 use PhpParser\Node\Stmt\Class_;
 use PHPStan\Analyser\Scope;
 use PHPStan\Broker\Broker;
 
-class ClassUsesObjectPrototypeRule implements \PHPStan\Rules\Rule
+class ClassShouldNotUseObjectPrototypeRule implements \PHPStan\Rules\Rule
 {
 
 	/**
@@ -49,20 +51,30 @@ class ClassUsesObjectPrototypeRule implements \PHPStan\Rules\Rule
 
 		$classReflection = $this->broker->getClass($fullyQualifiedClassName);
 
+		// enums extend ObjectPrototype, so we won't check them
+		if ($classReflection->isSubclassOf(Enum::class)) {
+			return [];
+		}
+
+		// \Consistence\PhpException uses \Consistence\Type\ObjectMixinTrait, so we won't check them
+		if ($classReflection->isSubclassOf(\Consistence\PhpException::class)) {
+			return [];
+		}
+
 		$parentClass = $classReflection->getParentClass();
-		if ($parentClass === false) { // does not extend anything
+		if ($parentClass !== false && $parentClass->getName() === ObjectPrototype::class) {
 			return [
 				sprintf(
-					'Class "%s" should extend \Consistence\ObjectPrototype',
+					'Class "%s" should not extend \Consistence\ObjectPrototype, you can rely on PHPStan to catch this type of errors.',
 					$className->toString()
 				),
 			];
 		}
 
-		if (!$classReflection->hasTraitUse(ObjectMixinTrait::class)) {
+		if ($classReflection->hasTraitUse(ObjectMixinTrait::class)) {
 			return [
 				sprintf(
-					'Class %s should use \Consistence\Type\ObjectMixinTrait',
+					'Class %s should not use \Consistence\Type\ObjectMixinTrait, you can rely on PHPStan to catch this type of errors.',
 					$className->toString()
 				),
 			];

@@ -22,7 +22,6 @@ class FooClassThatDoesNotUseAnyTrait extends ClassThatDoesNotExtendAnything
 
 }
 
-// Ok
 class ClassThatExtendsObjectPrototype extends ObjectPrototype
 {
 
@@ -38,4 +37,18 @@ class FooWithAnonymousClass extends ObjectPrototype
 		{
 		};
 	}
+}
+
+// enum
+class MyValues extends \Consistence\Enum\Enum
+{
+}
+
+// multi enum
+class MultiValues extends \Consistence\Enum\MultiEnum
+{
+}
+
+class MyException extends \Consistence\PhpException
+{
 }

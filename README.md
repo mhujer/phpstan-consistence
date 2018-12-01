@@ -7,7 +7,7 @@
 
 This repository provides following custom [PHPStan](https://github.com/phpstan/phpstan) rules for [Consistence library](https://github.com/consistence/consistence/)
 
-* Check that all classes either extend `\Consistence\ObjectPrototype` or use `\Consistence\Type\ObjectMixinTrait` somewhere in their hierarchy tree.
+* Check that no class extends `\Consistence\ObjectPrototype` or uses `\Consistence\Type\ObjectMixinTrait` somewhere in its hierarchy tree. The type of errors it prevents is caught by PHPStan so there is no need to extend/use anymore.
 * Check that Consistence function wrappers (from `ArrayType`) are used for array manipulation
 
 
