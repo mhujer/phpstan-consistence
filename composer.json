@@ -19,7 +19,7 @@
 	},
 	"require": {
 		"php": ">=7.1",
-		"consistence/consistence": "~1.0",
+		"consistence/consistence": "~1.0|~2.0",
 		"phpstan/phpstan": "^0.10"
 	},
 	"require-dev": {
