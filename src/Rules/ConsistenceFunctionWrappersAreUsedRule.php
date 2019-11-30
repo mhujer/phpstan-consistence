@@ -6,6 +6,9 @@ use PhpParser\Node;
 use PhpParser\Node\Expr\FuncCall;
 use PHPStan\Analyser\Scope;
 
+/**
+ * @implements \PHPStan\Rules\Rule<\PhpParser\Node\Expr\FuncCall>
+ */
 class ConsistenceFunctionWrappersAreUsedRule implements \PHPStan\Rules\Rule
 {
 

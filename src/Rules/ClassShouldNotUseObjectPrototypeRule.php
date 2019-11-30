@@ -10,6 +10,9 @@ use PhpParser\Node\Stmt\Class_;
 use PHPStan\Analyser\Scope;
 use PHPStan\Broker\Broker;
 
+/**
+ * @implements \PHPStan\Rules\Rule<\PhpParser\Node\Stmt\Class_>
+ */
 class ClassShouldNotUseObjectPrototypeRule implements \PHPStan\Rules\Rule
 {
 

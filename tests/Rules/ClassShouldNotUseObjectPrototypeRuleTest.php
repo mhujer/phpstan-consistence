@@ -2,6 +2,9 @@
 
 namespace Mhujer\PHPStanConsistence\Rules;
 
+/**
+ * @extends \PHPStan\Testing\RuleTestCase<\Mhujer\PHPStanConsistence\Rules\ClassShouldNotUseObjectPrototypeRule>
+ */
 class ClassShouldNotUseObjectPrototypeRuleTest extends \PHPStan\Testing\RuleTestCase
 {
 

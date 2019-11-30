@@ -2,6 +2,9 @@
 
 namespace Mhujer\PHPStanConsistence\Rules;
 
+/**
+ * @extends \PHPStan\Testing\RuleTestCase<\Mhujer\PHPStanConsistence\Rules\ConsistenceFunctionWrappersAreUsedRule>
+ */
 class ConsistenceFunctionWrappersAreUsedRuleTest extends \PHPStan\Testing\RuleTestCase
 {
 
