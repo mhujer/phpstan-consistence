@@ -17,8 +17,6 @@
 	"autoload-dev": {
 		"classmap": ["tests/"]
 	},
-	"minimum-stability": "dev",
-	"prefer-stable": true,
 	"require": {
 		"php": "^7.2",
 		"consistence/consistence": "~2.0",
