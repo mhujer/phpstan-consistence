@@ -16,8 +16,7 @@ use PHPStan\Broker\Broker;
 class ClassShouldNotUseObjectPrototypeRule implements \PHPStan\Rules\Rule
 {
 
-	/** @var \PHPStan\Broker\Broker */
-	private $broker;
+	private Broker $broker;
 
 	public function __construct(
 		Broker $broker
