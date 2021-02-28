@@ -1,7 +1,7 @@
 <!-- https://phpunit.de/manual/current/en/appendixes.configuration.html -->
 <phpunit
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:noNamespaceSchemaLocation="http://schema.phpunit.de/6.5/phpunit.xsd"
+	xsi:noNamespaceSchemaLocation="vendor/phpunit/phpunit/phpunit.xsd"
 	bootstrap="vendor/autoload.php"
 	colors="true"
 	beStrictAboutChangesToGlobalState="true"
@@ -17,14 +17,20 @@
 		</testsuite>
 	</testsuites>
 
-	<filter>
-		<whitelist>
-			<directory>src</directory>
-		</whitelist>
-	</filter>
-
-	<logging>
-		<log type="coverage-clover" target="build/logs/clover.xml"/>
-		<log type="coverage-html" target="build/logs/coverage-report"/>
-	</logging>
+	<coverage processUncoveredFiles="true">
+		<include>
+			<directory suffix=".php">src</directory>
+		</include>
+		<report>
+			<clover outputFile="build/logs/clover.xml"/>
+			<html
+				outputDirectory="build/logs/coverage-report"
+			/>
+			<text
+				outputFile="php://stdout"
+				showUncoveredFiles="true"
+				showOnlySummary="true"
+			/>
+		</report>
+	</coverage>
 </phpunit>

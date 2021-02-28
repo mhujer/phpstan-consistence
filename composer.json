@@ -23,10 +23,9 @@
 		"phpstan/phpstan": "^0.12"
 	},
 	"require-dev": {
-		"consistence/coding-standard": "3.9",
-		"jakub-onderka/php-parallel-lint": "1.0.0",
-		"phpunit/phpunit": "8.4.3",
-		"php-coveralls/php-coveralls": "2.2.0"
+		"consistence-community/coding-standard": "3.11.0",
+		"php-parallel-lint/php-parallel-lint": "1.2.0",
+		"phpunit/phpunit": "9.5.2"
 	},
 	"config": {
 		"sort-packages": true
