@@ -23,9 +23,9 @@
 		"phpstan/phpstan": "^0.12.60"
 	},
 	"require-dev": {
-		"consistence-community/coding-standard": "3.11.0",
-		"php-parallel-lint/php-parallel-lint": "1.2.0",
-		"phpunit/phpunit": "9.5.2"
+		"consistence-community/coding-standard": "3.11.1",
+		"php-parallel-lint/php-parallel-lint": "1.3.1",
+		"phpunit/phpunit": "9.5.10"
 	},
 	"config": {
 		"sort-packages": true
@@ -33,7 +33,7 @@
 	"scripts": {
 		"ci": [
 			"@composer validate --no-check-all",
-			"@composer install --no-progress --no-interaction --no-suggest",
+			"@composer install --no-progress --no-interaction",
 			"@phplint",
 			"@phpcs",
 			"@phpstan",
