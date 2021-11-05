@@ -18,8 +18,8 @@
 		"classmap": ["tests/"]
 	},
 	"require": {
-		"php": "~7.4 || ~8.0",
-		"consistence-community/consistence": "~2.1",
+		"php": "~8.0 || ~8.1",
+		"consistence-community/consistence": "^2.1.1",
 		"phpstan/phpstan": "^0.12.60"
 	},
 	"require-dev": {
