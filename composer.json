@@ -20,7 +20,7 @@
 	"require": {
 		"php": "~8.0 || ~8.1",
 		"consistence-community/consistence": "^2.1.1",
-		"phpstan/phpstan": "^0.12.60"
+		"phpstan/phpstan": "^1.0"
 	},
 	"require-dev": {
 		"consistence-community/coding-standard": "3.11.1",
@@ -42,7 +42,7 @@
 		"phplint": "parallel-lint -j 10 --exclude var --exclude vendor .",
 		"phpcs": "phpcs --standard=phpcs.xml --extensions=php --encoding=utf-8 --tab-width=4 -sp src tests",
 		"phpcbf": "phpcbf --standard=phpcs.xml --extensions=php --encoding=utf-8 --tab-width=4 -sp src tests",
-		"phpstan": "phpstan analyse -c phpstan.neon src tests --level 7 --no-progress",
+		"phpstan": "phpstan analyse -c phpstan.neon src --level 8 --no-progress",
 		"test": "phpunit"
 	}
 }

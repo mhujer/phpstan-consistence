@@ -62,7 +62,7 @@ class ClassShouldNotUseObjectPrototypeRule implements \PHPStan\Rules\Rule
 		}
 
 		$parentClass = $classReflection->getParentClass();
-		if ($parentClass !== false && $parentClass->getName() === ObjectPrototype::class) {
+		if ($parentClass !== null && $parentClass->getName() === ObjectPrototype::class) {
 			return [
 				sprintf(
 					'Class "%s" should not extend \Consistence\ObjectPrototype, you can rely on PHPStan to catch this type of errors.',
